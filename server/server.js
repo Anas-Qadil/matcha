@@ -8,25 +8,29 @@ const registerRouter = require("./src/routes/registerRoute")
 const loginRoute = require("./src/routes/loginRoute");
 const userModel = require("./src/models/usersModel");
 
-const port  = process.env.PORT || 8000;
+const PORT  = process.env.PORT || 8000;
+
+app.use(express.json());
 
 app.use("/api/users", usersRouter);
 app.use("/api/login", loginRoute);
+app.use("/api/register", registerRouter);
 
 const user = new userModel({
-    firstName : "anas",
+    firstName : "anas<",
     lastname : "Qadil",
-    username : "Segfault12",
+    username : "Segfault12<",
+    password : "ansad12",
     age : 20,
     email : "a0@gmail.com",
     gender : "male",
     sexualPref : "female",
     biography : "developer",
     interests : "music",
-    fameRating : 11,
+    fameRating : 10,
 })
 
-const play = 1
+const play = 0
 if (play == 1)
 {
     user.save((err) => {
@@ -38,9 +42,9 @@ if (play == 1)
 }
 
 
-app.listen(port, (err) => {
+app.listen(PORT, (err) => {
     if (err)
         console.log(err);
     else
-        console.log("server is up and running");
+        console.log(`server is up and running on Port ${PORT}`);
 });

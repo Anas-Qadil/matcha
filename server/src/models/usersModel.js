@@ -1,7 +1,7 @@
 const express = require("express");
 const { Schema, model, default: mongoose } = require("mongoose");
 const validateEmail = require("../utils/validatUsername");
-const { isEmail} = require("validator");
+const { isEmail, isAlphanumeric } = require("validator");
 
 const usersSchema = Schema({
     firstName : {
@@ -9,14 +9,16 @@ const usersSchema = Schema({
         required : true,
         maxLength : 16,
         minLength : 3,
-        trim : true
+        trim : true,
+        validate : isAlphanumeric
     },
     lastname : {
         type : String,
         required : true,
         maxLength : 16,
         minLength : 3,
-        trim : true
+        trim : true,
+        validate : isAlphanumeric
     },
     age : {
         type : Number,
@@ -32,7 +34,12 @@ const usersSchema = Schema({
         maxLength : 16,
         minLength : 3,
         trim : true,
-        unique : true
+        unique : true,
+        validate : isAlphanumeric
+    },
+    password : {
+        type : String,
+        required : true,
     },
     email : {
         type : String,
@@ -56,17 +63,20 @@ const usersSchema = Schema({
         lowercase : true,
         required : false,
         unique : false,
+        validate : isAlphanumeric
     }],
     biography : {
         type : String, 
         required : false,
         unique : false,
+        validate : isAlphanumeric
     },
     interests : [{
         type : String,
         lowercase : true,
         required: false,
         unique : false,
+        validate : isAlphanumeric
     }],
     seenBy : [{
         type : mongoose.Schema.ObjectId,
