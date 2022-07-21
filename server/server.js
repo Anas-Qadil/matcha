@@ -9,7 +9,7 @@ const loginRoute = require("./src/routes/loginRoute");
 const userModel = require("./src/models/usersModel");
 const errorHandler = require("./src/middlewares/errorMiddleware");
 
-const PORT  = process.env.PORT || 8000;
+const PORT  = process.env.PORT || 8000; 
 
 app.use(express.json());
 
