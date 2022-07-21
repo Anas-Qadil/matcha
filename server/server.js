@@ -7,6 +7,7 @@ const usersRouter = require("./src/routes/userRoute");
 const registerRouter = require("./src/routes/registerRoute")
 const loginRoute = require("./src/routes/loginRoute");
 const userModel = require("./src/models/usersModel");
+const errorHandler = require("./src/middlewares/errorMiddleware");
 
 const PORT  = process.env.PORT || 8000;
 
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use("/api/users", usersRouter);
 app.use("/api/login", loginRoute);
 app.use("/api/register", registerRouter);
+app.use(errorHandler);
 
 const user = new userModel({
     firstName : "anas<",
@@ -29,17 +31,6 @@ const user = new userModel({
     interests : "music",
     fameRating : 10,
 })
-
-const play = 0
-if (play == 1)
-{
-    user.save((err) => {
-        if (err)
-            console.log(err.message)
-        else
-            console.log("saved"); 
-    })
-}
 
 
 app.listen(PORT, (err) => {
