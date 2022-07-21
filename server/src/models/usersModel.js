@@ -69,7 +69,6 @@ const usersSchema = Schema({
         type : String, 
         required : false,
         unique : false,
-        validate : isAlphanumeric
     },
     interests : [{
         type : String,

@@ -1,10 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const loginController = require("../controllers/loginController")
 
-router.get("/", (re, res) => {
-    
-
-    res.send("generate token");
-})
+router.get("/", loginController);
 
 module.exports = router;
