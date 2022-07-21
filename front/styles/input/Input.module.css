@@ -1,0 +1,35 @@
+.Container{
+    height: 51px;
+    width: 364px;
+    border-radius: 11px;
+    border: none;
+    background: rgb(197,237,255);
+    background: linear-gradient(90deg, rgba(197,237,255,0.5802696078431373) 0%, rgba(242,217,249,0.5886729691876751) 100%);
+    color: #5F5F5F;
+    font-family: Abhaya Libre;
+    font-size: 19px;
+    letter-spacing: 1px;
+    outline: none;
+}
+
+.DContainer{
+    height: 51px;
+    width: 364px;
+    border-radius: 11px;
+    border: none;
+    background: rgb(197,237,255);
+    background: linear-gradient(90deg, rgba(197,237,255,0.8743872549019608) 0%, rgba(242,217,249,0.8743872549019608) 100%);
+    color: #5F5F5F;
+    font-family: Abhaya Libre;
+    font-size: 19px;
+    letter-spacing: 1px;
+    outline: none;
+}
+
+.Container{
+    text-indent: 20px;
+}
+
+.DContainer{
+    text-indent: 20px;
+}

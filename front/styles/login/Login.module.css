@@ -1,0 +1,84 @@
+/* -------------------------------------StartloginHome--------------------------- */
+
+
+.Container{
+    width: 100%;
+    height: calc(100% - 150px);
+}
+
+.child{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 100px;
+}
+.iconSVG{
+    height: 976px;
+    width: 1245px;
+}
+
+/* -------------------------------------EndloginHome--------------------------- */
+
+.Content{
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.Allinput{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+.SingText{
+    color: #37467C;
+    font-family: Abhaya Libre;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.textForget{
+    font-family: Abhaya Libre;
+    font-size: 32px;
+    color: #5F5F5F;
+    font-size: 19px;
+    margin-left: 223px;
+    margin-top: -30px;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.textForget:hover{
+    color: rgb(241, 0, 221);
+}
+
+
+.DSingText{
+    color: #D7DEF6;
+    font-family: Abhaya Libre;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.DtextForget{
+    font-family: Abhaya Libre;
+    font-size: 32px;
+    color: #D7DEF6;
+    font-size: 19px;
+    margin-left: 223px;
+    margin-top: -30px;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.DtextForget:hover{
+    color: cyan;
+}

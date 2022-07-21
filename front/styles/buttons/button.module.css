@@ -1,0 +1,97 @@
+.Btn{
+    width: 161px;
+    height: 56px;
+    background-color: #37467C;
+    color: #E8E8E8;
+    letter-spacing: 1px;
+    font-size: 19px;
+    font-family: Abhaya Libre;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+    rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.Btn:hover{
+    background-color: #D7DEF6;
+    color: #37467C;
+}
+
+.DBtn{
+    width: 161px;
+    height: 56px;
+    background-color: #D7DEF6;
+    color: #37467C;
+    letter-spacing: 1px;
+    font-size: 19px;
+    font-family: Abhaya Libre;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+    rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.DBtn:hover{
+    background-color: #526199b0;
+    color: #D7DEF6;
+}
+
+
+
+
+
+.XLBtn{
+    width: 364px;
+    height: 56px;
+    background-color: #37467C;
+    color: #E8E8E8;
+    letter-spacing: 1px;
+    font-size: 19px;
+    font-family: Abhaya Libre;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+    rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.XLBtn:hover{
+    background-color: #D7DEF6;
+    color: #37467C;
+}
+
+.XLDBtn{
+    width: 364px;
+    height: 56px;
+    background-color: #D7DEF6;
+    color: #37467C;
+    letter-spacing: 1px;
+    font-size: 19px;
+    font-family: Abhaya Libre;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+    rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.XLDBtn:hover{
+    background-color: #526199b0;
+    color: #D7DEF6;
+}
+
+/* background-image: linear-gradient(to bottom, #01151c, #041c26, #042431, #022c3d, #013449, #013449, #013449, #013449, #022c3d, #042431, #041c26, #01151c); */

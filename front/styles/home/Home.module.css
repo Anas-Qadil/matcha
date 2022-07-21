@@ -1,0 +1,58 @@
+.BackGround{
+    width: 100%;
+    height: calc(100% - 150px);
+    display: flex;
+    flex-flow: column;
+}
+
+.content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 90px;
+}
+
+.TextContent{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.AllButton{
+    width: 20%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.Text1{
+    text-align: center;
+    font-size: 64px;
+    font-weight: bold;
+    color: #37467C;
+    font-family: Abhaya Libre;
+}
+.Text2{
+    text-align: center;
+    width: 70%;
+    font-size: 19px;
+    color: #37467C;
+    font-family: Abhaya Libre;
+}
+
+.DText1{
+    text-align: center;
+    font-size: 64px;
+    font-weight: bold;
+    color: #D7DEF6;
+    font-family: Abhaya Libre;
+}
+.DText2{
+    text-align: center;
+    width: 70%;
+    font-size: 19px;
+    color: #D7DEF6;
+    font-family: Abhaya Libre;
+}
