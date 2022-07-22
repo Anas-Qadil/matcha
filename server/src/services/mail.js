@@ -1,41 +1,37 @@
 const nodemailer = require("nodemailer");
+const dotenv = require("dotenv").config();
 
-// async..await is not allowed in global scope, must use a wrapper
 async function main() {
-  // Generate test SMTP service account from ethereal.email
-  // Only needed if you don't have a real mail account for testing
-  let testAccount = await nodemailer.createTestAccount();
 
-  // create reusable transporter object using the default SMTP transport
-  let transporter = nodemailer.createTransport({
-    host: "smtp.ethereal.email",
-    port: 587,
-    secure: false, // true for 465, false for other ports
-    auth: {
-      user: testAccount.user, // generated ethereal user
-      pass: testAccount.pass, // generated ethereal password
-    },
-  });
+	const email = process.env.EMAIL;
+	const password = process.env.APPPW;
 
-  // send mail with defined transport object
-  let info = await transporter.sendMail({
-    from: '"Fred Foo 👻" <foo@example.com>', // sender address
-    to: "qadilanass10@gmail.com", // list of receivers
-    subject: "Hello ✔", // Subject line
-    text: "Hello world?", // plain text body
-    html: "<b>Hello world?</b>", // html body
-  });
+	const from = "matcha@team.com";
+	const EmailReciever = "zakaria.akdim37@gmail.com";
+	const subject = "matcha Email Test";
+	const text = "Hello world?";
+	const html = "<b>Hello world?</b>";
+
+	console.log(email);
+	const transporter = nodemailer.createTransport({
+		host : "smtp.gmail.com",
+		port : 587,
+		secure : false,
+		auth : {
+			user : email,
+			pass : password
+		},
+	});
+	const info = await transporter.sendMail({
+		from : `Segfault <${from}>`,
+		to : EmailReciever,
+		subject : subject,
+		text : text,
+		html : html,
+	});
 
   console.log("Message sent: %s", info.messageId);
-
-  // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-
-  // Preview only available when sending through an Ethereal account
   console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-
-  // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 }
 
-main().catch(console.error);
-
-module.exports = main;
+// main().catch(console.error); //turn this on
