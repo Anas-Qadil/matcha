@@ -1,8 +1,9 @@
 const express = require("express");
 const AsyncHandler = require("express-async-handler");
 const jwt = require("jsonwebtoken");
+const userModel = require("../models/usersModel");
 
-const authenticateTokenMiddelware = AsyncHandler((req, res, next) => {
+const authenticateTokenMiddelware = AsyncHandler(async(req, res, next) => {
 
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1];
@@ -19,8 +20,13 @@ const authenticateTokenMiddelware = AsyncHandler((req, res, next) => {
             throw new Error("An Error Has Occured");
         }
         req.user = user;
-        next();
     });
+    const DBUser = await userModel.findOne({username : req.user.username});
+    if (!DBUser){
+        res.status(400);
+        throw new Error("The Owner Of This Token Is No Longer Exists!!");
+    }
+    next();
 
 })
 

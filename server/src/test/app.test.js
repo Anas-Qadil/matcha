@@ -11,4 +11,4 @@ describe("Test the root path", () => {
                 done();
             });
     });
-})
+});

@@ -13,7 +13,6 @@ const loginController = asyncHandler(async(req, res) => {
         res.status(404);
         throw new Error ("Invalid Email");
     }
-
     const match = await bcrypt.compare(user.password, getUser.password);
     if (!match) {
         res.status(404);
@@ -28,6 +27,3 @@ const loginController = asyncHandler(async(req, res) => {
 });
 
 module.exports = loginController;
-
-
-

@@ -36,6 +36,10 @@ const updateUser = asyncHandler(async(req, res) => {
 
     const username = req.params.username;
 
+    if (req.body.username !== undefined){
+        res.status(400);
+        throw new Error("Username Can't be Changed");
+    }
     const user = await userModel.findOne({username : username});
     if (!user)
     {
