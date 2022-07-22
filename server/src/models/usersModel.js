@@ -4,7 +4,7 @@ const validateEmail = require("../utils/validatUsername");
 const { isEmail, isAlphanumeric } = require("validator");
 
 const usersSchema = Schema({
-    firstName : {
+    firstname : {
         type: String,
         required : true,
         maxLength : 16,

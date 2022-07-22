@@ -3,9 +3,11 @@ const mongoose = require("mongoose");
 const asyncHandler = require("express-async-handler");
 const bcrypt = require("bcrypt");
 const userModel = require("../models/usersModel");
+const generateToken = require("../utils/generateToken");
 
 const registerController = asyncHandler(async(req, res) => {
 
+    const token = generateToken({username : req.body.username});
     bcrypt.hash(req.body.password, 10)
         .then((pw) => {
             req.body.password = pw;
@@ -14,7 +16,7 @@ const registerController = asyncHandler(async(req, res) => {
                 .then((result) => {
                     res.status(201).send({
                         message : "User Created Successfully",
-                        user : result
+                        token : token
                     });
                 })
                 .catch(error => {
@@ -30,7 +32,6 @@ const registerController = asyncHandler(async(req, res) => {
                 e,
             });
         });
-
 });
 
 module.exports = registerController;
