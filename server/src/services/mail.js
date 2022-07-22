@@ -4,10 +4,10 @@ const dotenv = require("dotenv").config();
 async function main() {
 
 	const email = process.env.EMAIL;
-	const password = process.env.APPPW;
+	const password = process.env.PASSWORD;
 
 	const from = "matcha@team.com";
-	const EmailReciever = "zakaria.akdim37@gmail.com";
+	const EmailReciever = "qadilanass10@gmail.com";
 	const subject = "matcha Email Test";
 	const text = "Hello world?";
 	const html = "<b>Hello world?</b>";
@@ -23,7 +23,7 @@ async function main() {
 		},
 	});
 	const info = await transporter.sendMail({
-		from : `Segfault <${from}>`,
+		from : `Matcha <Matcha Team>`,
 		to : EmailReciever,
 		subject : subject,
 		text : text,
