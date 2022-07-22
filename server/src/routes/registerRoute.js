@@ -7,4 +7,4 @@ const registerMiddleware = require("../middlewares/registerMiddleware");
 
 router.post("/", registerMiddleware, registerController);
 
-module.exports = router;
+module.exports = router; 
