@@ -2,6 +2,7 @@ const express = require("express");
 const asyncHandler = require("express-async-handler");
 const userModel = require("../models/usersModel");
 const bcrypt = require("bcrypt");
+const generateToken = require("../utils/generateToken");
 
 const loginController = asyncHandler(async(req, res) => {
 
@@ -18,10 +19,10 @@ const loginController = asyncHandler(async(req, res) => {
         res.status(404);
         throw new Error("Invalid Password");
     }
-
+    const token = generateToken({username : getUser.username});
     res.status(200).send({
         message : "user found",
-        user : getUser
+        token : token
     });
 
 });
