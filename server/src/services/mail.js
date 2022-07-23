@@ -2,18 +2,24 @@ const nodemailer = require("nodemailer");
 const dotenv = require("dotenv").config();
 const fs = require("fs");
 const asyncHandler = require("express-async-handler");
+const bcrypt = require("bcrypt");
 
-const SendMail = asyncHandler(async() => {
 
-	fs.readFile("/Users/aqadil/Desktop/1337/matcha/server/src/utils/emailFormat.html", async(err, data) => {
+const SendMail = asyncHandler(async(data) => {
+
+	const cryptedUsername = await bcrypt.hash(data.username, 10);
+
+	fs.readFile("/Users/aqadil/Desktop/1337/matcha/server/src/utils/emailFormat.html", async(err, file) => {
 		if (err)
 			return console.log(err);
-		const EmailFormat = data.toString();
+		// const matchaHost = process.env.SERVER_URL;
+		const matchaHost = "http://10.13.3.5:3001/";
+		const confirmationUrl = matchaHost + "api/confirmEmail/?cryptedUsername=" + cryptedUsername
+		const EmailFormat = file.toString().replace("ConfirmationLink", confirmationUrl);
 		const email = process.env.EMAIL;
 		const password = process.env.PASSWORD;
-
 		const from = "matcha@team.com";
-		const EmailReciever = "qadilanass10@gmail.com";
+		const EmailReciever = data.email;
 		const subject = "Confirm The Email To Complete The Profile Creation";
 		const text = "Hello world?text";
 		const html = EmailFormat;

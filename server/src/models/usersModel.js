@@ -24,7 +24,6 @@ const usersSchema = Schema({
         type : Number,
         min : 10,
         max : 99,
-        required : true,
         unique : false,
     },
     username : {
@@ -53,7 +52,6 @@ const usersSchema = Schema({
         type : String,
         trim : true,
         lowercase : true,
-        required : true,
         enum : ["male", "female"],
         unique: false,
     },
@@ -108,7 +106,15 @@ const usersSchema = Schema({
     }],
     blockedUsers : [{
         type : mongoose.Schema.ObjectId,
-    }]
+    }],
+    isEmailConfirmed : {
+        type : Boolean,
+        default : false
+    },
+    isRegistrationPhaseCompleted : {
+        type : Boolean,
+        default : false
+    }
 }, {
     timestamps : {
         createdAt : 'created_at',

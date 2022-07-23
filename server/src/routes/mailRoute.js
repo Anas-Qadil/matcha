@@ -1,9 +1,15 @@
 const express = require("express");
 const SendMail = require("../services/mail");
+const crypt = require("../utils/crypt");
 
-const mailRoute = (req, res) => {
+const mailRoute = async(req, res) => {
     
-    SendMail();
+    const data = {
+        username :req.body.username,
+        email : req.body.email
+    }
+
+    SendMail(data);
     res.send("e");
 }
 

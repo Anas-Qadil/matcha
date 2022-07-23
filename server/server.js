@@ -4,7 +4,7 @@ const connection = require("./src/configs/db");
 
 const PORT  = process.env.PORT || 8000; 
 
-app.listen(PORT, (err) => {
+app.listen(PORT,"10.13.3.5", (err) => {
     if (err)
         console.log(err);
     else
