@@ -1,9 +1,9 @@
 const express = require("express");
-const mail = require("../services/mail");
+const SendMail = require("../services/mail");
 
 const mailRoute = (req, res) => {
     
-    mail();
+    SendMail();
     res.send("e");
 }
 
