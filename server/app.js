@@ -23,4 +23,4 @@ app.use("/api/mail", mailRoute);
 app.use("/api/confirmEmail", emailConformationRoute);
 app.use(errorHandler);
 
-module.exports = app;
+module.exports = app; 
