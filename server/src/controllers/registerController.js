@@ -8,7 +8,6 @@ const sendMail = require("../services/mail");
 
 const registerController = asyncHandler(async(req, res) => {
 
-    console.log(req.body);
     const token = generateToken({username : req.body.username});
     bcrypt.hash(req.body.password, 10)
         .then((pw) => {
@@ -20,8 +19,7 @@ const registerController = asyncHandler(async(req, res) => {
                         username : req.body.username,
                         email : req.body.email
                     }
-                    console.log(data);
-                    // sendMail();
+                    sendMail(data);
                     res.status(201).send({
                         message : "User Created Successfully",
                         token : token
@@ -40,6 +38,7 @@ const registerController = asyncHandler(async(req, res) => {
                 e,
             });
         });
+    
 });
 
 module.exports = registerController;
