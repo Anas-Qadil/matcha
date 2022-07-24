@@ -2,26 +2,29 @@ const nodemailer = require("nodemailer");
 const dotenv = require("dotenv").config();
 const fs = require("fs");
 const asyncHandler = require("express-async-handler");
-const bcrypt = require("bcrypt");
+const userModel = require("../models/usersModel");
+const mongoose = require("mongoose");
 
 
-const SendMail = asyncHandler(async(data) => {
+const SendForgotPasswordMail = asyncHandler(async(ForgotPasswordEmail) => {
 
-	const cryptedUsername = await bcrypt.hash(data.username, 10);
+    const code = Math.floor(Math.random() * 1000000).toString();
+    const user = await userModel.findOne({email : ForgotPasswordEmail});
+    user.passwordResetCode = code;
+    await user.save();
 
-	fs.readFile("/Users/aqadil/Desktop/1337/matcha/server/src/utils/emailFormat.html", async(err, file) => {
+	fs.readFile("/Users/aqadil/Desktop/1337/matcha/server/src/utils/forgotPasswordEmail.html", async(err, file) => {
 		if (err)
 			return console.log(err);
 		const matchaHost = process.env.SERVER_URL;
-		// const matchaHost = "http://10.13.3.5:3001/";
-		const confirmationUrl = matchaHost + "api/confirmEmail/?cryptedUsername=" + cryptedUsername
-		const EmailFormat = file.toString().replace("ConfirmationLink", confirmationUrl);
+		// // const matchaHost = "http://10.13.3.5:3001/";
+		const EmailFormat = file.toString().replace("PasswordCode", code);
 		const email = process.env.EMAIL;
 		const password = process.env.PASSWORD;
 		const from = "matcha@team.com";
-		const EmailReciever = data.email;
-		const subject = "Confirm The Email To Complete The Profile Creation";
-		const text = "Hello world?text";
+		const EmailReciever = ForgotPasswordEmail;
+		const subject = "Password Reset";
+		const text = "Forgot Password Email";
 		const html = EmailFormat;
 
 		const transporter = nodemailer.createTransport({
@@ -45,4 +48,4 @@ const SendMail = asyncHandler(async(data) => {
 
 });
 
-module.exports = SendMail;
+module.exports = SendForgotPasswordMail;

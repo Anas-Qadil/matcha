@@ -114,6 +114,12 @@ const usersSchema = Schema({
     isRegistrationPhaseCompleted : {
         type : Boolean,
         default : false
+    },
+    passwordResetCode : {
+        type : Number,
+        default : 0,
+        required : false,
+        unique : false
     }
 }, {
     timestamps : {

@@ -7,6 +7,8 @@ const errorHandler = require("./src/middlewares/errorMiddleware");
 const mailRoute = require("./src/routes/mailRoute");
 const emailConformationRoute = require("./src/routes/emailConformationRoute");
 const cors = require("cors");
+const resetPasswordRoute = require("./src/routes/resetPasswordRoute");
+const forgotPasswordRoute = require("./src/routes/forgotPasswordRoute");
 
 app.use(cors());
 
@@ -21,6 +23,8 @@ app.use("/api/login", loginRoute);
 app.use("/api/register", registerRouter);
 app.use("/api/mail", mailRoute);
 app.use("/api/confirmEmail", emailConformationRoute);
+app.use("/api/reset-password", resetPasswordRoute);
+app.use("/api/forgot-password", forgotPasswordRoute);
 app.use(errorHandler);
 
 module.exports = app; 
