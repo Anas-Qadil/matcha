@@ -5,6 +5,7 @@
     height: 100vh;
     background-color: rgb(42, 163, 196);
     background-image: linear-gradient(#FEF6FF, #E6F4F9);
+    min-height: 750px;
 }
 
 .DContainer{
@@ -13,4 +14,5 @@
     /* background-color: rgb(42, 163, 196); */
     background-image: linear-gradient(to bottom, #01151c, #041c26, #042431, #022c3d,
     #013449, #013449, #013449, #013449, #022c3d, #042431, #041c26, #01151c);
+    min-height: 750px;
 }

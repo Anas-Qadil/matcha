@@ -2,6 +2,7 @@ import { useContext } from "react"
 import Button from "../../components/buttons/Button"
 import { ThemeContext } from "../../src/themeContext"
 import style from '../../styles/home/Home.module.css'
+import Link from 'next/link'
 
 const Home = () =>{
     const {darkMode} = useContext(ThemeContext);
@@ -19,8 +20,8 @@ const Home = () =>{
                     </div>
                 </div>
                 <div className={style.AllButton}>
-                  <Button text={"Match Now"} size={"sl"}/>
-                  <Button text={"Create Account"} size={"sl"}/>
+                <Link href='/login'><div><Button text={"Match Now"} size={"sl"}/></div></Link>
+                <Link href='/register'><div><Button text={"Create Account"} size={"sl"}/></div></Link>
                 </div>
             </div>
             <div className={style.Content2}></div>

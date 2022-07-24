@@ -1,6 +1,7 @@
 import { ThemeProvider } from "../src/themeContext"
 import { useEffect } from "react";
 import App from "../components/App";
+
 function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
@@ -9,9 +10,11 @@ function MyApp({ Component, pageProps }) {
       document.getElementsByTagName("body")[0].style.height = "100%";
   });
   return(
-    <ThemeProvider>
-      <App Component={Component} pageProps={pageProps}/>
-    </ThemeProvider>
+    <>
+      <ThemeProvider>
+        <App Component={Component} pageProps={pageProps}/>
+      </ThemeProvider>
+    </>
   )
 }
       

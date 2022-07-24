@@ -1,12 +1,10 @@
 import style from '../../styles/NaveBar/navbar.module.css'
 import Logo from '../../public/icon/twitter.png'
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { ThemeContext } from '../../src/themeContext';
 
 const Navbar = () =>{
     const {darkMode, setDarkMode} = useContext(ThemeContext);
-    
-    // console.log(darkMode);
     const hundlClick = () =>{
         setDarkMode(!darkMode);
     }

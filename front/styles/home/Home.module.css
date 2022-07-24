@@ -21,7 +21,7 @@
     gap: 30px;
 }
 .AllButton{
-    width: 20%;
+    width: 550px;
     height: 100px;
     display: flex;
     align-items: center;
@@ -33,10 +33,11 @@
     font-weight: bold;
     color: #37467C;
     font-family: Abhaya Libre;
+    width: 740px;
 }
 .Text2{
     text-align: center;
-    width: 70%;
+    width: 500px;
     font-size: 19px;
     color: #37467C;
     font-family: Abhaya Libre;
@@ -48,11 +49,60 @@
     font-weight: bold;
     color: #D7DEF6;
     font-family: Abhaya Libre;
+    width: 740px;
 }
 .DText2{
     text-align: center;
-    width: 70%;
+    width: 500px;
     font-size: 19px;
     color: #D7DEF6;
     font-family: Abhaya Libre;
+}
+
+@media screen and (max-width: 667px)
+{
+    .content{
+        margin-top: 150px;
+    }
+    .Text1{
+        width: 400px;
+        font-size: 30px;
+    }
+    .Text2{
+        width: 400px;
+    }
+    .DText1{
+        width: 400px;
+        font-size: 30px;
+    }
+    .DText2{
+        width: 400px;
+    }
+    .AllButton{
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 408px)
+{
+    .content{
+        margin-top: 0px;
+    }
+    .Text1{
+        width: 400px;
+        font-size: 30px;
+    }
+    .Text2{
+        width: 400px;
+    }
+    .DText1{
+        width: 300px;
+        font-size: 30px;
+    }
+    .DText2{
+        width: 300px;
+    }
+    .AllButton{
+        width: 320px;
+    }
 }
