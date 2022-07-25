@@ -11,7 +11,6 @@ const registerMiddleware = asyncHandler(async(req, res, next) => {
     }
     if (!req.body.firstname || !req.body.lastname || !req.body.username || !req.body.email || !req.body.password )
     {
-        console.log("hey");
         res.status(400);
         throw new Error("some registration fields are missing");
     }
