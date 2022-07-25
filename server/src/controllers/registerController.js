@@ -38,7 +38,7 @@ const registerController = asyncHandler(async(req, res) => {
                 e,
             });
         });
-    
+
 });
 
 module.exports = registerController;

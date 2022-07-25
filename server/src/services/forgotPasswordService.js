@@ -5,7 +5,6 @@ const asyncHandler = require("express-async-handler");
 const userModel = require("../models/usersModel");
 const mongoose = require("mongoose");
 
-
 const SendForgotPasswordMail = asyncHandler(async(ForgotPasswordEmail) => {
 
     const code = Math.floor(Math.random() * 1000000).toString();
@@ -16,8 +15,8 @@ const SendForgotPasswordMail = asyncHandler(async(ForgotPasswordEmail) => {
 	fs.readFile("/Users/aqadil/Desktop/1337/matcha/server/src/utils/forgotPasswordEmail.html", async(err, file) => {
 		if (err)
 			return console.log(err);
-		const matchaHost = process.env.SERVER_URL;
-		// // const matchaHost = "http://10.13.3.5:3001/";
+		// const matchaHost = process.env.SERVER_URL;
+		const matchaHost = "http://10.13.3.5:3001/";
 		const EmailFormat = file.toString().replace("PasswordCode", code);
 		const email = process.env.EMAIL;
 		const password = process.env.PASSWORD;

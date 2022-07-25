@@ -11,7 +11,6 @@ const resetPasswordRoute = require("./src/routes/resetPasswordRoute");
 const forgotPasswordRoute = require("./src/routes/forgotPasswordRoute");
 
 app.use(cors());
-
 app.use(express.json());
 
 app.get("/", (req, res) => {

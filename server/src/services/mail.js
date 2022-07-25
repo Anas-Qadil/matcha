@@ -12,8 +12,8 @@ const SendMail = asyncHandler(async(data) => {
 	fs.readFile("/Users/aqadil/Desktop/1337/matcha/server/src/utils/emailFormat.html", async(err, file) => {
 		if (err)
 			return console.log(err);
-		const matchaHost = process.env.SERVER_URL;
-		// const matchaHost = "http://10.13.3.5:3001/";
+		// const matchaHost = process.env.SERVER_URL;
+		const matchaHost = "http://10.13.3.5:3001/";
 		const confirmationUrl = matchaHost + "api/confirmEmail/?cryptedUsername=" + cryptedUsername
 		const EmailFormat = file.toString().replace("ConfirmationLink", confirmationUrl);
 		const email = process.env.EMAIL;
