@@ -9,11 +9,19 @@ const registerMiddleware = asyncHandler(async(req, res, next) => {
         res.status(400)
         throw new Error("Empty User Infos");
     }
+    if (!req.body.firstname || !req.body.lastname || !req.body.username || !req.body.email || !req.body.password )
+    {
+        console.log("hey");
+        res.status(400);
+        throw new Error("some registration fields are missing");
+    }
 
-    // check if email or username already exists
-        //Here
-
-
+    const user = await userModel.findOne({$or : [{username : req.body.username}, {email : req.body.email}]});
+    if (user)
+    {
+        res.status(400);
+        throw new Error("username or email are already taken");
+    }
     next();
 });
 
