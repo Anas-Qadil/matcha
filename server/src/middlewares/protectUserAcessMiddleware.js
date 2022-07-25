@@ -6,7 +6,8 @@ const getToken = require("../utils/getToken");
 const protectUserAcessMiddleware = AsyncHandler(async(req, res, next) => {
 
     const user = req.user;
-    const searchedUser = req.params.username;
+    const searchedUser = req.user.username;
+
     if (user.username !== searchedUser){
         res.status(400);
         throw new Error("You Don't Have Access To This User")

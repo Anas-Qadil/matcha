@@ -34,7 +34,7 @@ const getUser = asyncHandler(async(req, res) => {
 
 const updateUser = asyncHandler(async(req, res) => {
 
-    const username = req.params.username;
+    const username = req.user.username;
 
     if (req.body.username !== undefined){
         res.status(400);
